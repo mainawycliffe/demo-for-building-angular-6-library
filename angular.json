@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "test-library": {
+      "root": "projects/test-library",
+      "sourceRoot": "projects/test-library/src",
+      "projectType": "library",
+      "prefix": "tl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/test-library/tsconfig.lib.json",
+            "project": "projects/test-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/test-library/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test-library/src/test.ts",
+            "tsConfig": "projects/test-library/tsconfig.spec.json",
+            "karmaConfig": "projects/test-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/test-library/tsconfig.lib.json",
+              "projects/test-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular6-library-demo"
