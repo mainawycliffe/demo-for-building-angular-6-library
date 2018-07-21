@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span>Demo App</span>
+</mat-toolbar>
+<div gdAuto>
+  <div fxLayout="column" fxFlex.xs="100" fxFlex="600px" fxFlexOffset="calc(50% - 300px)" fxFlexOffset.xs="0">
+    <mat-card>
+      <mat-card-header>{{ title$ | async }}</mat-card-header>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item *ngFor="let x of teams | async; let i = index" role="listitem"> {{ i + 1 }}. {{ x.country }} - {{ x.trophies }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
