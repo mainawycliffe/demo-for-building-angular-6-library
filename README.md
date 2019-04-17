@@ -14,4 +14,4 @@ And finally run the angular application:
 
 `ng s --aot`
 
-The accompanying post for this demo can be located [on my website here](https://theinfogrid.com/tech/developers/angular/building-angular-6-libraries/).
+The accompanying post for this demo can can be found [here](https://codinglatte.com/posts/angular/building-angular-6-libraries/).
